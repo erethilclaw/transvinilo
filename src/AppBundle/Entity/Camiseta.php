@@ -157,12 +157,23 @@ class Camiseta
 	{
 		$al = strtolower($a->talla);
 		$bl = strtolower($b->talla);
-		if ($al == $bl) {
+		if (self::checkTalla($al) == self::checkTalla($bl)) {
 			return 0;
 		}
-		return ($al > $bl) ? +1 : -1;
+		return (self::checkTalla($al) > self::checkTalla($bl)) ? +1 : -1;
 	}
 
-
+	static function checkTalla($talla){
+    	switch ( $talla){
+		    case 's':
+			    return 1;
+		    case 'm':
+		    	return 2;
+		    case 'l':
+		    	return 3;
+		    case 'xl':
+		    	return 4;
+	    }
+	}
 }
 

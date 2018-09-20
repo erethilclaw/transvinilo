@@ -30,15 +30,12 @@ class TransviniloController extends Controller {
 
 		$listaCamisetas = array($c1,$c2,$c3,$c4,$c5);
 
-		//usort($listaCamisetas, array('AppBundle\Entity\Camiseta', "cmp_obj"));
-
 		$carrito = new Carrito();
 		$carrito->setListaCamisetas($listaCamisetas);
-		$listaCamisetas= $carrito->sortCamisetas();
+		$carrito->sortCamisetas();
 		$carrito->actualizarCostes();
 
 		return $this->render('transvinilo/showCarrito.html.twig', array(
-			'listaCamisetas' => $listaCamisetas,
 			'carrito' => $carrito
 		));
 	}

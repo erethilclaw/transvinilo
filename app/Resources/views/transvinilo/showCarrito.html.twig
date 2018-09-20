@@ -9,7 +9,7 @@
             <th>Color</th>
             <th>Precio</th>
         </tr>
-        {% for camiseta in listaCamisetas %}
+        {% for camiseta in carrito.listaCamisetas[1] %}
             <tr>
                 <th>{{ camiseta.nombre }}</th>
                 <th>{{ camiseta.talla }}</th>
@@ -19,7 +19,6 @@
         {% endfor %}
         </thead>
     </table>
-    {{ dump(carrito.listaCamisetas) }}
     <p>Coste: {{ carrito.precioTotal }}</p>
     <p>Coste + envio: {{ carrito.precioTotalEnvio }}</p>
 {% endblock %}

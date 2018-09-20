@@ -84,9 +84,25 @@ class Carrito {
 		}
 	}
 
+	public function getCostesEnvio(){
+		if ($this->precioTotal < 50){
+			return 5;
+		}else{
+			return 0;
+		}
+	}
+
 	public function actualizarCostes (){
 		$this->setPrecioTotal();
 		$this->setPrecioTotalEnvio();
+	}
+
+	public function getTotalItems(){
+		$totalItems= 0;
+		foreach ($this->listaCamisetas[1] as $camiseta ){
+			$totalItems += $camiseta->getCantidad();
+		}
+		return $totalItems;
 	}
 
 }

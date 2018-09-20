@@ -32,6 +32,8 @@ class Camiseta
      */
     private $preu;
 
+    private $cantidad;
+
 	/**
 	 * Camiseta constructor.
 	 *
@@ -40,11 +42,12 @@ class Camiseta
 	 * @param string $color
 	 * @param float $preu
 	 */
-	public function __construct( $nombre, $talla, $color, $preu ) {
+	public function __construct( $nombre, $talla, $color, $preu, $cantidad ) {
 		$this->nombre = $nombre;
 		$this->talla  = $talla;
 		$this->color  = $color;
 		$this->preu   = $preu;
+		$this->cantidad = $cantidad;
 	}
 
 	/**
@@ -152,6 +155,22 @@ class Camiseta
     {
         return $this->preu;
     }
+
+	/**
+	 * @return mixed
+	 */
+	public function getCantidad() {
+		return $this->cantidad;
+	}
+
+	/**
+	 * @param mixed $cantidad
+	 */
+	public function setCantidad( $cantidad ) {
+		$this->cantidad = $cantidad;
+	}
+
+
 
 	static function cmp_obj($a, $b)
 	{

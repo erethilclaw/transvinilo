@@ -1,0 +1,25 @@
+{% extends "base.html.twig" %}
+{% block body %}
+    <h1>carrito</h1>
+    <table>
+        <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Talla</th>
+            <th>Color</th>
+            <th>Precio</th>
+        </tr>
+        {% for camiseta in listaCamisetas %}
+            <tr>
+                <th>{{ camiseta.nombre }}</th>
+                <th>{{ camiseta.talla }}</th>
+                <th>{{ camiseta.color }}</th>
+                <th>{{ camiseta.preu }}</th>
+            </tr>
+        {% endfor %}
+        </thead>
+    </table>
+    {{ dump(carrito.listaCamisetas) }}
+    <p>Coste: {{ carrito.precioTotal }}</p>
+    <p>Coste + envio: {{ carrito.precioTotalEnvio }}</p>
+{% endblock %}
